@@ -116,20 +116,37 @@ static int g_contrast = 0x13;
 static int g_brightness = 70;
 
 // Режимы приложения.
-enum AppMode { MODE_PLAY, MODE_MENU, MODE_TUNER, MODE_EDIT, MODE_LOOPER, MODE_SYSTEM, MODE_CUSTOM, MODE_TEMPO };
+enum AppMode { MODE_PLAY, MODE_MENU, MODE_TUNER, MODE_EDIT, MODE_LOOPER, MODE_SYSTEM, MODE_CUSTOM, MODE_TEMPO, MODE_LCD };
 static volatile AppMode g_mode = MODE_PLAY;
 
 // --- Лупер: 4 дорожки по 30 с в SDRAM (интерливленный буфер -> последовательный доступ) ---
-static const int LOOP_TRACKS = 4;
+static const int LOOP_TRACKS = 3;
 static const int LOOP_LEN = 30 * 48000; // 30 с @ 48 кГц
 static float DSY_SDRAM_BSS g_loop[LOOP_LEN][LOOP_TRACKS];
 // Состояния дорожки: 0 пусто,1 запись,2 игра,3 mute,4 armed-rec,5 armed-dub,6 overdub
-static volatile uint8_t g_loopState[LOOP_TRACKS] = {0, 0, 0, 0};
+static volatile uint8_t g_loopState[LOOP_TRACKS] = {0, 0, 0};
 static volatile int g_loopLen = 0;    // длина мастер-петли (сэмплы; задаётся темпом)
 static volatile int g_loopPos = 0;    // общий указатель воспроизведения
 static volatile int g_loopActive = 0; // активная дорожка (управление)
-static volatile float g_loopVol[LOOP_TRACKS] = {1.0f, 1.0f, 1.0f, 1.0f}; // громкости дорожек
-static int g_loopTone[LOOP_TRACKS] = {0, 0, 0, 0}; // тон (индекс песни) на дорожке
+static volatile float g_loopVol[LOOP_TRACKS] = {1.0f, 1.0f, 1.0f}; // громкости дорожек
+static int g_loopTone[LOOP_TRACKS] = {0, 0, 0}; // тон (индекс песни) на дорожке
+static const float LOOP_ARM_THRESH = 0.02f;        // порог входа для авто-старта записи (ARMED)
+static const int LOOP_LEAD = 240;    // ~5 мс — оставить до первой ноты при авто-обрезке
+static volatile int g_loopStart = 0; // абсолютный старт петли в буфере (обрезка тишины)
+static bool g_onsetFound = false;    // найдена ли первая нота при записи первой петли
+static int g_onsetPos = 0;
+
+// Живой осциллограф: кольцо последних отсчётов выхода (для наглядной волны на экране).
+static const int SCOPE_N = 128;
+static float g_scope[SCOPE_N] = {0};
+static int g_scopeIdx = 0;
+static int g_scopeDecim = 0;
+
+// Всплывающее значение параметра при кручении пота в лупере.
+static int g_loopPopupParam = -1;
+static uint32_t g_loopPopupUntil = 0;
+static float g_popupLast[6] = {-1, -1, -1, -1, -1, -1}; // последнее показанное значение пота (антизалипание)
+static int g_loopEncField = 0; // что крутит энкодер в лупере: 0=Тон 1=Пресет 2=Дорожка
 
 // --- Метроном (независимый от петли, free-running) ---
 static volatile int   g_bpm = 120;
@@ -145,7 +162,6 @@ static volatile int   g_clickLen = 2000;   // длина клика (сэмпл�
 static volatile bool  g_clickAccent = false;
 static volatile float g_clickPhase = 0.0f;
 static volatile int   g_ledBeat = 0;       // остаток свечения LED на долю (сэмплы)
-static volatile int   g_potMode = 0;       // 0=Tone, 1=Volume (что крутят поты в лупере)
 static volatile bool  g_countInOn = true;  // отсчёт перед записью
 static volatile int   g_countInLeft = 0;   // осталось долей отсчёта (>0 = идёт count-in)
 
@@ -506,19 +522,30 @@ static void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer
             // ЛУПЕР (free-form) + независимый МЕТРОНОМ.
             if (g_looperEngaged)
             {
-                // --- петля: запись/микс (запись СУХОГО a до микса и до клика) ---
+                // --- петля: запись/микс. Абсолютный индекс = g_loopStart + g_loopPos.
                 bool running = (g_loopLen > 0) || (g_loopState[g_loopActive] == 1);
                 if (running)
                 {
-                    int pos = g_loopPos;
+                    int abspos = g_loopStart + g_loopPos;
+                    if (abspos >= LOOP_LEN) abspos = LOOP_LEN - 1;
                     float mixv = a;
                     for (int t = 0; t < LOOP_TRACKS; t++)
-                        if (g_loopState[t] == 2) mixv += g_loop[pos][t] * g_loopVol[t];
-                    if (g_loopState[g_loopActive] == 1) g_loop[pos][g_loopActive] = a; // запись сухого
+                        if (g_loopState[t] == 2) mixv += g_loop[abspos][t] * g_loopVol[t];
+                    if (g_loopState[g_loopActive] == 1)
+                    {
+                        g_loop[abspos][g_loopActive] = a; // запись сухого
+                        // первая петля пишется с нажатия ФС; ловим ПЕРВУЮ ноту для авто-обрезки тишины
+                        if (g_loopLen == 0 && !g_onsetFound && fabsf(in[0][i]) > LOOP_ARM_THRESH)
+                        {
+                            g_onsetFound = true;
+                            g_onsetPos = g_loopPos - LOOP_LEAD;
+                            if (g_onsetPos < 0) g_onsetPos = 0;
+                        }
+                    }
                     a = mixv * 0.7f;
-                    int np = pos + 1;
+                    int np = g_loopPos + 1;
                     if (g_loopLen > 0) { if (np >= g_loopLen) np = 0; }
-                    else if (np >= LOOP_LEN) np = LOOP_LEN - 1;
+                    else if (g_loopStart + np >= LOOP_LEN) np = g_loopPos; // достигли конца буфера (30с)
                     g_loopPos = np;
                 }
                 // --- бит-грид (крутится всегда: нужен метроному И count-in) ---
@@ -537,11 +564,13 @@ static void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer
                     if (--g_countInLeft == 0)
                     {
                         if (g_loopLen == 0) g_loopPos = 0;
-                        g_loopState[g_loopActive] = 1; // старт записи ровно на долю
+                        g_onsetFound = true; g_onsetPos = 0; // запись с «раз»: волна с начала, статус REC
+                        g_loopState[g_loopActive] = 1;
                     }
                 }
                 // клик + LED звучат когда метроном вкл ИЛИ идёт count-in
-                if (beatTick && (g_metOn || countingIn)) { g_clickEnv = g_clickLen; g_ledBeat = g_beatSamples / 3; }
+                if (beatTick && (g_metOn || countingIn)) g_ledBeat = g_beatSamples / 3; // LED-пульс: метроном ИЛИ отсчёт
+                if (beatTick && g_metOn) g_clickEnv = g_clickLen;                        // ЗВУК клика — только если метроном вкл (отсчёт беззвучный при выкл)
                 if (g_clickEnv > 0)
                 {
                     float env = (float)g_clickEnv / (float)g_clickLen;
@@ -552,6 +581,9 @@ static void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer
                     g_clickEnv--;
                 }
                 if (a > 1.0f) a = 1.0f; else if (a < -1.0f) a = -1.0f;
+
+                // Живой скоуп: децимируем выход в кольцо (осциллограф на экране лупера).
+                if (++g_scopeDecim >= 4) { g_scopeDecim = 0; g_scope[g_scopeIdx] = a; g_scopeIdx = (g_scopeIdx + 1) % SCOPE_N; }
             }
 
             out[0][i] = a;
@@ -752,15 +784,21 @@ static void looperRightCycle()
     if (st == 0)
     {
         g_loopTone[a] = g_currentSong;
-        if (g_countInOn && g_metOn) // count-in только если метроном включён
+        if (g_loopLen == 0)
         {
+            // первая петля: визуальный отсчёт (4 квадратика), потом старт записи на «раз»
+            g_loopStart = 0; g_loopPos = 0; g_onsetFound = false;
             g_metCounter = 0;
-            g_beatShow = g_beatsPerBar - 1; // следующая доля будет «раз»
-            g_countInLeft = g_beatsPerBar;  // такт отсчёта, потом старт записи (в аудио-потоке)
+            g_beatShow = g_beatsPerBar - 1;
+            g_countInLeft = g_beatsPerBar;
         }
-        else { if (g_loopLen == 0) g_loopPos = 0; g_loopState[a] = 1; } // сразу запись
+        else g_loopState[a] = 1; // overdub: пишем сразу, синхронно с играющей петлёй
     }
-    else if (st == 1) { if (g_loopLen == 0) { g_loopLen = g_loopPos; g_loopPos = 0; } g_loopState[a] = 2; } // запись -> игра
+    else if (st == 1)
+    {
+        if (g_loopLen == 0) { g_loopLen = g_loopPos; g_loopPos = 0; } // финализация (старт с доли, без обрезки)
+        g_loopState[a] = 2; // запись -> игра
+    }
     else if (st == 2) g_loopState[a] = 3;  // игра -> mute
     else g_loopState[a] = 2;               // mute -> игра
 }
@@ -769,7 +807,7 @@ static void looperClearActive()
     g_loopState[g_loopActive] = 0;
     bool any = false;
     for (int t = 0; t < LOOP_TRACKS; t++) if (g_loopState[t] != 0) any = true;
-    if (!any) { g_loopLen = 0; g_loopPos = 0; } // все пусты -> сброс длины
+    if (!any) { g_loopLen = 0; g_loopPos = 0; g_loopStart = 0; } // все пусты -> сброс
 }
 
 // ---- Edit FX: страницы эффектов; 6 потов правят параметры текущей страницы ----
@@ -975,8 +1013,8 @@ static void drawPlay()
     hardware.display.Update();
 }
 
-static const int MENU_COUNT = 10;
-static const char *kMenuItems[MENU_COUNT] = {"Tuner", "Edit FX", "Looper", "Tempo", "Save Preset", "Reset Preset", "Default All", "Custom Preset", "System", "Exit"};
+static const int MENU_COUNT = 6;
+static const char *kMenuItems[MENU_COUNT] = {"Looper", "Edit FX", "Tuner", "Tempo", "System", "Exit"};
 // Плашка-заголовок без рамки по периметру (для MENU / подменю).
 static void drawTitleBar(const char *title)
 {
@@ -1013,29 +1051,55 @@ static void drawMenu(int sel)
 
 // Экран System: настройки LCD (Contrast — реальный, Brightness — демо) + Back.
 // sel: 0=Contrast, 1=Brightness, 2=Back. edit: правим значение выбранного.
-static void drawSystem(int sel, bool edit)
+static const int SYS_COUNT = 6;
+static const char *kSysItems[SYS_COUNT] = {"Save Preset", "Reset Preset", "Default All", "Custom Preset", "LCD", "Back"};
+static void drawSystem(int sel)
 {
     hardware.display.Fill(false);
-    drawHeader("SYSTEM");
+    drawTitleBar("SYSTEM");
+    const int VIS = 5;
+    int top = sel - VIS / 2;
+    if (top > SYS_COUNT - VIS) top = SYS_COUNT - VIS;
+    if (top < 0) top = 0;
+    for (int r = 0; r < VIS && top + r < SYS_COUNT; r++)
+    {
+        int i = top + r, y = 14 + r * 10;
+        bool s = (i == sel);
+        if (s) hardware.display.DrawRect(3, y - 1, 117, y + 9, true, true);
+        hardware.display.SetCursor(7, y);
+        hardware.display.WriteString(kSysItems[i], Font_7x10, !s);
+    }
+    int trackTop = 13, trackH = 61 - trackTop;
+    int thumbH = trackH * VIS / SYS_COUNT;
+    int thumbY = trackTop + trackH * top / SYS_COUNT;
+    hardware.display.DrawRect(120, thumbY, 124, thumbY + thumbH, true, true);
+    hardware.display.Update();
+}
+
+// Подменю LCD: Contrast / Brightness / Back (значения ползунками).
+static const int LCD_COUNT = 3;
+static void drawLcd(int sel, bool edit)
+{
+    hardware.display.Fill(false);
+    drawTitleBar("LCD");
     const char *names[2] = {"Contrast", "Brightness"};
     float vals[2] = {g_contrast / 63.0f, g_brightness / 100.0f};
     for (int i = 0; i < 2; i++)
     {
-        int by = 15 + i * 13;
+        int by = 16 + i * 14;
         bool s = (sel == i);
-        if (s) hardware.display.DrawRect(3, by - 1, 67, by + 8, true, edit); // залито если правим
-        hardware.display.SetCursor(6, by);
-        hardware.display.WriteString(names[i], Font_6x8, !(s && edit));
-        int bx1 = 70, bx2 = 122, bh = 9;
+        if (s) hardware.display.DrawRect(2, by - 1, 62, by + 9, true, edit); // залито = правим
+        hardware.display.SetCursor(5, by);
+        hardware.display.WriteString(names[i], Font_7x10, !(s && edit));
+        int bx1 = 66, bx2 = 122, bh = 10;
         hardware.display.DrawRect(bx1, by - 1, bx2, by - 1 + bh, true, false);
         int w = (int)((bx2 - bx1 - 2) * vals[i]);
         if (w > 0) hardware.display.DrawRect(bx1 + 1, by, bx1 + 1 + w, by - 1 + bh - 1, true, true);
     }
-    // Back
-    int by = 15 + 2 * 13;
-    if (sel == 2) hardware.display.DrawRect(3, by - 1, 124, by + 8, true, false);
-    hardware.display.SetCursor(6, by);
-    hardware.display.WriteString("Back", Font_6x8, true);
+    int by = 16 + 2 * 14;
+    if (sel == 2) hardware.display.DrawRect(2, by - 1, 124, by + 9, true, true);
+    hardware.display.SetCursor(5, by);
+    hardware.display.WriteString("Back", Font_7x10, !(sel == 2));
     hardware.display.Update();
 }
 
@@ -1150,75 +1214,157 @@ static void drawEditPage(int pg)
 
 static void drawLooper(int field)
 {
-    static const char *ftag[5] = {"TRK", "MET", "BPM", "VOL", "POT"}; // что крутит энкодер
-    char line[40];
+    // Волновой экран (3 ланы): T# · статус словом (REC мигает) · осциллограмма · громкость.
+    (void)field;
+    static const char *stw[7] = {"--", "REC", "PLAY", "MUTE", "ARM", "ARM", "DUB"};
+    char line[24];
     hardware.display.Fill(false);
-    // Экран отсчёта перед записью (count-in).
+
+    // Шапка (инверсная): LOOP | отсчёт-квадратики (при count-in) ИЛИ название тона | BPM.
+    hardware.display.DrawRect(0, 0, 127, 9, true, true);
+    hardware.display.SetCursor(2, 1);
+    hardware.display.WriteString("LOOP", Font_6x8, false);
     if (g_countInLeft > 0)
     {
-        writeCentered("REC IN", 8, Font_11x18, true);
-        char b[8]; snprintf(b, sizeof(b), "%d", g_countInLeft);
-        writeCentered(b, 32, Font_16x26, true);
-        hardware.display.Update();
-        return;
-    }
-    // шапка: LOOP + beat-точки (если метроном вкл) + поле энкодера
-    hardware.display.DrawRect(0, 0, 127, 11, true, true);
-    hardware.display.SetCursor(3, 1);
-    hardware.display.WriteString("LOOP", Font_7x10, false);
-    if (g_metOn)
-        for (int b = 0; b < g_beatsPerBar && b < 8; b++)
+        // Отсчёт: маленькие квадратики в шапке заполняются по долям.
+        int n = g_beatsPerBar; if (n > 8) n = 8; if (n < 1) n = 1;
+        int filled = n - g_countInLeft;
+        int sz = 6, gap = 3, x0 = 40;
+        for (int b = 0; b < n; b++)
         {
-            int bx = 40 + b * 7;
-            hardware.display.DrawRect(bx, 3, bx + 5, 8, false, (b == g_beatShow));
+            int x = x0 + b * (sz + gap);
+            hardware.display.DrawRect(x, 2, x + sz, 8, false, b < filled); // тёмный на инверсной шапке
         }
-    hardware.display.SetCursor(124 - 3 * 7, 1);
-    hardware.display.WriteString(ftag[field], Font_7x10, false);
+    }
+    else
+    {
+        // Поле энкодера + имя (сокращённо, чтобы влезло).
+        char hdr[16];
+        bool okIdx = (g_currentSong >= 0 && g_currentSong < g_bankCount);
+        if (g_loopEncField == 0)
+        {
+            const char *p = okIdx ? getPartName(g_currentSong) : "--";
+            if (!p || !p[0]) p = "--";
+            snprintf(hdr, sizeof(hdr), "T:%.8s", p);
+        }
+        else if (g_loopEncField == 1)
+        {
+            const char *s = okIdx ? g_bank[g_currentSong].song : "--";
+            if (!s || !s[0]) s = "--";
+            snprintf(hdr, sizeof(hdr), "P:%.8s", s);
+        }
+        else
+            snprintf(hdr, sizeof(hdr), "TRK %d", g_loopActive + 1);
+        hardware.display.SetCursor(32, 1);
+        hardware.display.WriteString(hdr, Font_6x8, false);
+    }
+    if (g_metOn) snprintf(line, sizeof(line), "M%d", g_bpm); else snprintf(line, sizeof(line), "%d", g_bpm); // BPM всегда; M = метроном вкл
+    hardware.display.SetCursor(127 - (int)strlen(line) * 6, 1);
+    hardware.display.WriteString(line, Font_6x8, false);
 
-    // строка: метроном + режим потов
-    if (g_metOn) snprintf(line, sizeof(line), "Met %d v%d%%", g_bpm, (int)(g_clickVol * 100.0f + 0.5f));
-    else snprintf(line, sizeof(line), "Met OFF");
-    hardware.display.SetCursor(3, 13);
-    hardware.display.WriteString(line, Font_6x8, true);
-    bool potsVol = (g_potMode == 1) || (g_loopState[g_loopActive] == 1);
-    hardware.display.SetCursor(104, 13);
-    hardware.display.WriteString(potsVol ? "Vol" : "Ton", Font_6x8, true);
+    bool blink = ((System::GetNow() / 350) % 2) != 0;
+    int wx0 = 44, wx1 = 108, ww = wx1 - wx0;
 
-    // 4 дорожки. Транспорт-бар: заливка=запись, бегущий маркер=игра, "mute"=стоп.
-    float prog = (g_loopLen > 0) ? (float)g_loopPos / (float)g_loopLen
-                                 : (float)g_loopPos / (float)LOOP_LEN; // общая позиция круга
-    if (prog < 0) prog = 0; if (prog > 1) prog = 1;
     for (int t = 0; t < LOOP_TRACKS; t++)
     {
-        int y = 23 + t * 10;
-        uint8_t st = g_loopState[t]; if (st > 3) st = 2;
+        int y = 11 + t * 17, mid = y + 8, amax = 7;
+        uint8_t st = g_loopState[t]; if (st > 6) st = 0;
         bool act = (t == g_loopActive);
-        bool col = act ? false : true; // цвет графики: тёмный на подсвеченной строке
-        if (act) hardware.display.DrawRect(1, y - 1, 126, y + 8, true, true);
-        const char *tn = (st == 0) ? "--" : getPartName(g_loopTone[t]);
-        if (!tn[0]) tn = "cust";
-        snprintf(line, sizeof(line), "T%d %s", t + 1, tn);
-        hardware.display.SetCursor(4, y);
-        hardware.display.WriteString(line, Font_6x8, !act);
 
-        int bx1 = 58, bx2 = 124, bh = 7, inW = bx2 - bx1 - 2;
-        if (st == 3) // mute — надпись, без бара (явно «не играет»)
+        // Метка "T1" крупно (инверсия на активной дорожке).
+        if (act) hardware.display.DrawRect(0, y, 15, y + 15, true, true);
+        snprintf(line, sizeof(line), "T%d", t + 1);
+        hardware.display.SetCursor(1, y + 3);
+        hardware.display.WriteString(line, Font_7x10, !act);
+
+        // Статус словом. Запись первой петли до первой ноты -> "GO" (играй!), потом "REC" (мигает).
+        const char *sw = stw[st];
+        bool show = true;
+        if (st == 1)
         {
-            hardware.display.SetCursor(bx2 - 4 * 6, y);
-            hardware.display.WriteString("mute", Font_6x8, !act);
+            if (g_loopLen == 0 && !g_onsetFound) { sw = "WAIT"; show = blink; } // ждём первую ноту
+            else { sw = "REC"; show = blink; }                                 // поймал — пишем (мигает)
         }
-        else if (st == 1) // запись — сплошная заливка до головки
+        if (show)
         {
-            hardware.display.DrawRect(bx1, y, bx2, y + bh, col, false);
-            int w = (int)(inW * prog);
-            if (w > 0) hardware.display.DrawRect(bx1 + 1, y + 1, bx1 + 1 + w, y + bh - 1, col, true);
+            hardware.display.SetCursor(17, y + 4);
+            hardware.display.WriteString(sw, Font_6x8, true);
         }
-        else if (st == 2) // игра — рамка + бегущий маркер (головка едет по кругу)
+
+        // Осциллограмма: до первой ноты (WAIT) — плоско; при записи растёт от ноты; при игре — полная.
+        bool wave = (st != 0);
+        int wstart = g_loopStart, len = 1;
+        bool rec = (st == 1);
+        if (st != 0)
         {
-            hardware.display.DrawRect(bx1, y, bx2, y + bh, col, false);
-            int mx = bx1 + 1 + (int)(inW * prog);
-            hardware.display.DrawRect(mx, y + 1, mx + 2, y + bh - 1, col, true);
+            if (g_loopLen > 0) len = g_loopLen;
+            else if (g_onsetFound) { wstart = g_onsetPos; len = g_loopPos - g_onsetPos; if (len < 1) len = 1; }
+            else wave = false; // первая петля, ноты ещё нет -> волну не рисуем
         }
+        if (wave)
+        {
+            float php = (g_loopLen > 0) ? (float)g_loopPos / (float)g_loopLen : 1.0f;
+            int seg = len / ww; if (seg < 1) seg = 1;
+            int step = seg / 16; if (step < 1) step = 1;
+            // Авто-масштаб: нормируем волну под пик дорожки — видно при любом уровне.
+            float tpk = 0.003f;
+            int sscan = len / 60; if (sscan < 1) sscan = 1;
+            for (int q = wstart; q < wstart + len && q < LOOP_LEN; q += sscan)
+            {
+                float v = fabsf(g_loop[q][t]);
+                if (v > tpk) tpk = v;
+            }
+            float gain = (float)amax / (tpk > 0.08f ? tpk : 0.08f);
+            for (int px = 0; px < ww; px++)
+            {
+                float fx = (float)px / (float)ww;
+                if (rec && g_loopLen > 0 && fx > php) break;
+                int pos = (int)(fx * len);
+                float pk = 0.0f;
+                for (int s = 0; s < seg; s += step)
+                {
+                    int q = wstart + pos + s;
+                    if (pos + s >= len || q >= LOOP_LEN) break;
+                    float v = fabsf(g_loop[q][t]);
+                    if (v > pk) pk = v;
+                }
+                int h = (int)(pk * gain);
+                if (h > amax) h = amax;
+                int x = wx0 + px;
+                if (h > 0) hardware.display.DrawLine(x, mid - h, x, mid + h, true);
+                else hardware.display.DrawPixel(x, mid, true);
+            }
+        }
+        else
+            hardware.display.DrawLine(wx0, mid, wx1 - 1, mid, true); // плоско (пусто / ждём ноту)
+
+        // Вертикальный бар громкости справа (пот дорожки).
+        float v = g_loopVol[t]; if (v < 0) v = 0; if (v > 1) v = 1;
+        int vb = (int)(v * 14.0f);
+        hardware.display.DrawRect(120, y, 126, y + 15, true, false);
+        if (vb > 0) hardware.display.DrawRect(121, y + 15 - vb, 125, y + 14, true, true);
+    }
+
+    // Плейхед: одна вертикаль по всем дорожкам — синхрон виден сразу.
+    if (g_loopLen > 0)
+    {
+        int px = wx0 + (int)((float)g_loopPos / (float)g_loopLen * (float)ww);
+        hardware.display.DrawLine(px, 11, px, 61, true);
+    }
+
+    // Всплывающее значение параметра при кручении пота (~1.5 с) — поверх экрана.
+    if (g_loopPopupParam >= 0 && System::GetNow() < g_loopPopupUntil)
+    {
+        hardware.display.DrawRect(20, 16, 108, 49, false, true); // очистить фон окошка
+        hardware.display.DrawRect(20, 16, 108, 49, true, false); // рамка
+        char t1[16], t2[16];
+        int pp = g_loopPopupParam;
+        if (pp < LOOP_TRACKS) { snprintf(t1, sizeof(t1), "T%d VOL", pp + 1); snprintf(t2, sizeof(t2), "%d%%", (int)(g_loopVol[pp] * 100.0f + 0.5f)); }
+        else if (pp == 3) { snprintf(t1, sizeof(t1), "BPM"); snprintf(t2, sizeof(t2), "%d", g_bpm); }
+        else if (pp == 4) { snprintf(t1, sizeof(t1), "CLICK"); if (g_metOn) snprintf(t2, sizeof(t2), "%d%%", (int)(g_clickVol * 100.0f + 0.5f)); else snprintf(t2, sizeof(t2), "OFF"); }
+        else { snprintf(t1, sizeof(t1), "BEATS"); snprintf(t2, sizeof(t2), "%d", g_beatsPerBar); }
+        writeCentered(t1, 19, Font_7x10, true);
+        writeCentered(t2, 31, Font_11x18, true);
     }
     hardware.display.Update();
 }
@@ -1340,12 +1486,12 @@ int main(void)
 
     int menuSel = 0;     // выбор в меню
     int editPage = 0;    // текущая страница эффекта в Edit FX
-    int sysSel = 0;      // System: 0=Contrast 1=Brightness 2=Back
-    bool sysEdit = false; // System: правим значение выбранного
+    int sysSel = 0;      // System: список Save/Reset/Default/Custom/LCD/Back
+    int lcdSel = 0;      // LCD подменю: 0=Contrast 1=Brightness 2=Back
+    bool lcdEdit = false; // LCD: правим значение
     int custSel = 0;     // Custom Preset: 0=Add 1=Delete 2=Back
     int tempoSel = 0;    // Tempo: 0..4 поля, 5=Back
     bool tempoEdit = false;
-    int loopField = 0;   // Looper: 0=Дорожка 1=Тон 2=МетГромкость
     float prevKnob[KNOBS] = {0}; // для детекта реального движения пота (оверлей правки)
     uint32_t savedMsgUntil = 0;
     const char *flashMsg = "SAVED";
@@ -1445,15 +1591,11 @@ int main(void)
             if (d != 0) { menuSel += d; while (menuSel < 0) menuSel += MENU_COUNT; while (menuSel >= MENU_COUNT) menuSel -= MENU_COUNT; }
             if (p > 0)
             {
-                if (menuSel == 0) { g_mode = MODE_TUNER; g_tunerFreq = 0.0f; hardware.SetAudioBypass(false); } // вход в Daisy
+                if (menuSel == 0) { g_mode = MODE_LOOPER; recomputeTempo(); g_metCounter = 0; g_beatShow = g_beatsPerBar - 1; g_looperEngaged = true; g_knobRearm = true; g_effectOn = true; hardware.SetAudioBypass(false); } // лупер: эффект вкл + сигнал через Daisy
                 else if (menuSel == 1) { g_mode = MODE_EDIT; editPage = 0; g_knobRearm = true; }
-                else if (menuSel == 2) { g_mode = MODE_LOOPER; loopField = 0; recomputeTempo(); g_metCounter = 0; g_beatShow = g_beatsPerBar - 1; g_looperEngaged = true; g_knobRearm = true; }
+                else if (menuSel == 2) { g_mode = MODE_TUNER; g_tunerFreq = 0.0f; hardware.SetAudioBypass(false); } // вход в Daisy
                 else if (menuSel == 3) { g_mode = MODE_TEMPO; tempoSel = 0; tempoEdit = false; }
-                else if (menuSel == 4) { saveCurrentSong(); flashMsg = "SAVED"; g_mode = MODE_PLAY; savedMsgUntil = now + 900; }
-                else if (menuSel == 5) { resetCurrentPreset(); flashMsg = "RESET"; g_mode = MODE_PLAY; savedMsgUntil = now + 900; }   // только этот пресет
-                else if (menuSel == 6) { factoryResetAll(); flashMsg = "DEFAULT"; g_mode = MODE_PLAY; savedMsgUntil = now + 900; }
-                else if (menuSel == 7) { g_mode = MODE_CUSTOM; custSel = 0; }
-                else if (menuSel == 8) { g_mode = MODE_SYSTEM; sysSel = 0; sysEdit = false; }
+                else if (menuSel == 4) { g_mode = MODE_SYSTEM; sysSel = 0; }
                 else g_mode = MODE_PLAY; // Exit
             }
             drawMenu(menuSel);
@@ -1466,38 +1608,30 @@ int main(void)
         }
         else if (g_mode == MODE_LOOPER)
         {
-            // нажатие: TRK -> MET(вкл/выкл) -> BPM -> VOL(клик) -> POT(Tone/Vol)
-            if (p > 0) { loopField = (loopField + 1) % 5; g_knobRearm = true; }
+            // Энкодер: вращение = выбор тона/пресета; нажатие = следующая активная дорожка.
+            // Нажатие — переключить поле: Тон -> Пресет -> Дорожка.
+            if (p > 0) g_loopEncField = (g_loopEncField + 1) % 3;
             if (d != 0)
             {
-                if (loopField == 0) { g_loopActive += d; while (g_loopActive < 0) g_loopActive += LOOP_TRACKS; while (g_loopActive >= LOOP_TRACKS) g_loopActive -= LOOP_TRACKS; }
-                else if (loopField == 1) { g_metOn = !g_metOn; if (g_metOn) { g_metCounter = 0; g_beatShow = g_beatsPerBar - 1; } }
-                else if (loopField == 2) { g_bpm += d; recomputeTempo(); }
-                else if (loopField == 3) { g_clickVol += d * 0.05f; if (g_clickVol < 0) g_clickVol = 0; if (g_clickVol > 1) g_clickVol = 1; }
-                else { g_potMode ^= 1; g_knobRearm = true; }
+                if (g_loopEncField == 0) gotoTone(d);       // тон (часть песни: Clean/Crunch/Lead)
+                else if (g_loopEncField == 1) gotoSong(d);  // пресет (песня/группа)
+                else { g_loopActive += d; while (g_loopActive < 0) g_loopActive += LOOP_TRACKS; while (g_loopActive >= LOOP_TRACKS) g_loopActive -= LOOP_TRACKS; }
             }
-            // поты: Volume если выбран режим Volume ИЛИ активная дорожка пишется; иначе живой тон
+            // Поты: 1-3 = громкости дорожек; 4 = BPM, 5 = громкость клика (0=метроном выкл), 6 = доли.
             if (g_knobsInit)
             {
-                bool potsVol = (g_potMode == 1) || (g_loopState[g_loopActive] == 1);
-                if (potsVol)
-                {
-                    for (int i = 0; i < LOOP_TRACKS && i < KNOBS; i++) if (g_knobChanged[i]) g_loopVol[i] = g_knobCache[i];
-                }
-                else
-                {
-                    for (int i = 0; i < KNOBS; i++) if (g_knobChanged[i])
-                    {
-                        int pid = amp.GetMappedParameterIDForKnob(i);
-                        if (pid != -1)
-                        {
-                            if (isBinnedKnob(i)) { int before = amp.GetParameterAsBinnedValue(pid); amp.SetParameterAsMagnitude(pid, g_knobCache[i]); if (amp.GetParameterAsBinnedValue(pid) != before) g_muteCountdown = g_switchMuteSamples; }
-                            else amp.SetParameterAsMagnitude(pid, g_knobCache[i]);
-                        }
-                    }
-                }
+                for (int i = 0; i < LOOP_TRACKS && i < KNOBS; i++)
+                    if (g_knobChanged[i]) g_loopVol[i] = g_knobCache[i];
+                if (g_knobChanged[3]) { g_bpm = 50 + (int)(g_knobCache[3] * 150.0f); recomputeTempo(); } // 50-200, плавнее
+                if (g_knobChanged[4]) { g_clickVol = g_knobCache[4]; g_metOn = (g_clickVol > 0.02f); }
+                if (g_knobChanged[5]) { int b = 2 + (int)(g_knobCache[5] * 6.0f); if (b < 2) b = 2; if (b > 8) b = 8; g_beatsPerBar = b; recomputeTempo(); }
+                // попап только для метронома (поты 4-6, i>=3); громкости (1-3) без окошка.
+                // Обновляем только при реальном сдвиге (>0.01), иначе шум держал бы попап вечно.
+                for (int i = 3; i < KNOBS; i++)
+                    if (g_knobChanged[i] && (g_popupLast[i] < 0.0f || fabsf(g_knobCache[i] - g_popupLast[i]) > 0.01f))
+                    { g_loopPopupParam = i; g_loopPopupUntil = now + 3000; g_popupLast[i] = g_knobCache[i]; }
             }
-            drawLooper(loopField);
+            drawLooper(0);
         }
         else if (g_mode == MODE_TEMPO)
         {
@@ -1522,16 +1656,30 @@ int main(void)
         }
         else if (g_mode == MODE_SYSTEM)
         {
-            if (!sysEdit)
+            if (d != 0) { sysSel += d; while (sysSel < 0) sysSel += SYS_COUNT; while (sysSel >= SYS_COUNT) sysSel -= SYS_COUNT; }
+            if (p > 0)
             {
-                if (d != 0) { sysSel += d; while (sysSel < 0) sysSel += 3; while (sysSel >= 3) sysSel -= 3; }
-                if (p > 0) { if (sysSel == 2) g_mode = MODE_MENU; else sysEdit = true; }
+                if (sysSel == 0) { saveCurrentSong(); flashMsg = "SAVED"; g_mode = MODE_PLAY; savedMsgUntil = now + 900; }
+                else if (sysSel == 1) { resetCurrentPreset(); flashMsg = "RESET"; g_mode = MODE_PLAY; savedMsgUntil = now + 900; }
+                else if (sysSel == 2) { factoryResetAll(); flashMsg = "DEFAULT"; g_mode = MODE_PLAY; savedMsgUntil = now + 900; }
+                else if (sysSel == 3) { g_mode = MODE_CUSTOM; custSel = 0; }
+                else if (sysSel == 4) { g_mode = MODE_LCD; lcdSel = 0; lcdEdit = false; } // LCD подменю
+                else g_mode = MODE_MENU;                                                  // Back
+            }
+            drawSystem(sysSel);
+        }
+        else if (g_mode == MODE_LCD)
+        {
+            if (!lcdEdit)
+            {
+                if (d != 0) { lcdSel += d; while (lcdSel < 0) lcdSel += LCD_COUNT; while (lcdSel >= LCD_COUNT) lcdSel -= LCD_COUNT; }
+                if (p > 0) { if (lcdSel == 2) g_mode = MODE_SYSTEM; else lcdEdit = true; }
             }
             else
             {
                 if (d != 0)
                 {
-                    if (sysSel == 0)
+                    if (lcdSel == 0)
                     {
                         g_contrast += d;
                         if (g_contrast < 0) g_contrast = 0;
@@ -1545,9 +1693,9 @@ int main(void)
                         if (g_brightness > 100) g_brightness = 100;
                     }
                 }
-                if (p > 0) sysEdit = false;
+                if (p > 0) lcdEdit = false;
             }
-            drawSystem(sysSel, sysEdit);
+            drawLcd(lcdSel, lcdEdit);
         }
         else if (g_mode == MODE_CUSTOM)
         {

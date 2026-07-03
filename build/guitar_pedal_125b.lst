@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 1
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 1
   41              		.loc 1 15 1 view .LVU3
   42 0004 0446     		mov	r4, r0
   43              	.LBB6:
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 2
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s 			page 2
 
 
   44              		.loc 1 15 35 view .LVU4
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 1
  100              	.LVL5:
  101              		.loc 1 15 35 view .LVU14
  102              	.LBE9:
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 3
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s 			page 3
 
 
  103              	.LBE10:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 1
  152 0010 044A     		ldr	r2, .L12+4
    9:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     // Setup the Switch Meta Data for this hardware
  153              		.loc 1 9 57 view .LVU24
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 4
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s 			page 4
 
 
  154 0012 2060     		str	r0, [r4]
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 1
  199              		.cfi_offset 4, -16
  200              		.cfi_offset 5, -12
  201              		.cfi_offset 6, -8
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 5
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s 			page 5
 
 
  202              		.cfi_offset 14, -4
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 1
  243              		.loc 1 28 5 is_stmt 1 view .LVU51
  244              		.loc 1 28 9 is_stmt 0 view .LVU52
  245 0038 05F11003 		add	r3, r5, #16
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 6
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s 			page 6
 
 
   29:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     InitEncoders(1, encoderPins);
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 1
  290              	.LVL18:
   36:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     InitTrueBypass(seed::D1, seed::D12);
  291              		.loc 1 36 5 is_stmt 1 view .LVU69
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 7
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s 			page 7
 
 
  292              		.loc 1 36 19 is_stmt 0 view .LVU70
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 1
  346 0013 0A       		.byte	10
  347 0014 02       		.byte	2
  348 0015 08       		.byte	8
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 8
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s 			page 8
 
 
  349 0016 0000     		.space	2
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 1
  417              		.set	.LANCHOR0,. + 0
  420              	_ZTVN10bkshepherd15GuitarPedal125BE:
  421 0000 00000000 		.word	0
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 9
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s 			page 9
 
 
  422 0004 00000000 		.word	0
@@ -487,85 +487,85 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 1
  425 0010 00000000 		.word	_ZN10bkshepherd15GuitarPedal125B4InitEjb
  426              		.text
  427              	.Letext0:
- 428              		.file 2 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
- 429              		.file 3 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
- 430              		.file 4 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
- 431              		.file 5 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\lib\\gcc\\arm-none-e
- 432              		.file 6 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
- 433              		.file 7 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
- 434              		.file 8 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
- 435              		.file 9 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
- 436              		.file 10 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
- 437              		.file 11 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
- 438              		.file 12 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
- 439              		.file 13 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
- 440              		.file 14 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
- 441              		.file 15 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
- 442              		.file 16 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
- 443              		.file 17 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
- 444              		.file 18 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
- 445              		.file 19 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
- 446              		.file 20 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
- 447              		.file 21 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
- 448              		.file 22 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
- 449              		.file 23 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
- 450              		.file 24 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
- 451              		.file 25 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
- 452              		.file 26 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
- 453              		.file 27 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
- 454              		.file 28 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
- 455              		.file 29 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
- 456              		.file 30 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 428              		.file 2 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/machine/_default_types.h"
+ 429              		.file 3 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/sys/_stdint.h"
+ 430              		.file 4 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/stdint.h"
+ 431              		.file 5 "/Library/DaisyToolchain/0.2.0/arm/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h"
+ 432              		.file 6 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath"
+ 433              		.file 7 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/std_abs.h"
+ 434              		.file 8 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstdlib"
+ 435              		.file 9 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstdint"
+ 436              		.file 10 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/type_traits"
+ 437              		.file 11 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/debug/debug.h"
+ 438              		.file 12 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v
+ 439              		.file 13 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/algorithmfwd.h"
+ 440              		.file 14 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/stl_pair.h"
+ 441              		.file 15 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/exception_ptr.h"
+ 442              		.file 16 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/uses_allocator.h
+ 443              		.file 17 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/tuple"
+ 444              		.file 18 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/functional"
+ 445              		.file 19 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstdarg"
+ 446              		.file 20 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstdio"
+ 447              		.file 21 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstring"
+ 448              		.file 22 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cstddef"
+ 449              		.file 23 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/predefined_ops.h
+ 450              		.file 24 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/sys/_types.h"
+ 451              		.file 25 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/sys/reent.h"
+ 452              		.file 26 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/sys/lock.h"
+ 453              		.file 27 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/math.h"
+ 454              		.file 28 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/stdlib.h"
+ 455              		.file 29 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/math.h"
+ 456              		.file 30 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/stdlib.h"
  457              		.file 31 "../VCOM-G1/GuitarPedal/libDaisy/src/daisy_core.h"
  458              		.file 32 "../VCOM-G1/GuitarPedal/libDaisy/src/dev/max11300.h"
  459              		.file 33 "../VCOM-G1/GuitarPedal/libDaisy/src/dev/sr_595.h"
  460              		.file 34 "../VCOM-G1/GuitarPedal/libDaisy/src/util/wav_format.h"
  461              		.file 35 "../VCOM-G1/GuitarPedal/libDaisy/src/daisy_seed.h"
- 462              		.file 36 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\lib\\gcc\\arm-none-
- 463              		.file 37 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
- 464              		.file 38 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 462              		.file 36 "/Library/DaisyToolchain/0.2.0/arm/lib/gcc/arm-none-eabi/10.3.1/include/stdarg.h"
+ 463              		.file 37 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/stdio.h"
+ 464              		.file 38 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/string.h"
  465              		.file 39 "../VCOM-G1/GuitarPedal/libDaisy/Middlewares/Third_Party/FatFs/src/integer.h"
  466              		.file 40 "../VCOM-G1/GuitarPedal/libDaisy/Middlewares/Third_Party/FatFs/src/ff.h"
  467              		.file 41 "GuitarPedal/Hardware-Modules/base_hardware_module.h"
  468              		.file 42 "GuitarPedal/Hardware-Modules/guitar_pedal_125b.h"
- 469              		.file 43 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 469              		.file 43 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/new"
  470              		.file 44 "<built-in>"
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 10
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s 			page 10
 
 
 DEFINED SYMBOLS
-                            *ABS*:00000000 guitar_pedal_125b.cpp
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:17     .text._ZN10bkshepherd15GuitarPedal125BD2Ev:00000000 $t
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:24     .text._ZN10bkshepherd15GuitarPedal125BD2Ev:00000000 _ZN10bkshepherd15GuitarPedal125BD2Ev
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:58     .text._ZN10bkshepherd15GuitarPedal125BD2Ev:00000010 $d
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:24     .text._ZN10bkshepherd15GuitarPedal125BD2Ev:00000000 _ZN10bkshepherd15GuitarPedal125BD1Ev
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:65     .text._ZN10bkshepherd15GuitarPedal125BD0Ev:00000000 $t
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:72     .text._ZN10bkshepherd15GuitarPedal125BD0Ev:00000000 _ZN10bkshepherd15GuitarPedal125BD0Ev
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:116    .text._ZN10bkshepherd15GuitarPedal125BD0Ev:0000001c $d
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:121    .text._ZN10bkshepherd15GuitarPedal125BC2Ev:00000000 $t
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:128    .text._ZN10bkshepherd15GuitarPedal125BC2Ev:00000000 _ZN10bkshepherd15GuitarPedal125BC2Ev
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:173    .text._ZN10bkshepherd15GuitarPedal125BC2Ev:00000020 $d
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:128    .text._ZN10bkshepherd15GuitarPedal125BC2Ev:00000000 _ZN10bkshepherd15GuitarPedal125BC1Ev
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:181    .text._ZN10bkshepherd15GuitarPedal125B4InitEjb:00000000 $t
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:188    .text._ZN10bkshepherd15GuitarPedal125B4InitEjb:00000000 _ZN10bkshepherd15GuitarPedal125B4InitEjb
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:310    .text._ZN10bkshepherd15GuitarPedal125B4InitEjb:0000008c $d
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:420    .rodata._ZTVN10bkshepherd15GuitarPedal125BE:00000000 _ZTVN10bkshepherd15GuitarPedal125BE
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:322    .rodata:00000000 $d
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:356    .rodata._ZL16s_switchMetaData:00000000 $d
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:360    .rodata._ZL16s_switchMetaData:00000000 _ZL16s_switchMetaData
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:368    .rodata._ZN5daisy4seedL2D1E:00000000 $d
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:372    .rodata._ZN5daisy4seedL2D1E:00000000 _ZN5daisy4seedL2D1E
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:376    .rodata._ZN5daisy4seedL2D9E:00000000 $d
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:380    .rodata._ZN5daisy4seedL2D9E:00000000 _ZN5daisy4seedL2D9E
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:384    .rodata._ZN5daisy4seedL3D11E:00000000 $d
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:388    .rodata._ZN5daisy4seedL3D11E:00000000 _ZN5daisy4seedL3D11E
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:392    .rodata._ZN5daisy4seedL3D12E:00000000 $d
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:396    .rodata._ZN5daisy4seedL3D12E:00000000 _ZN5daisy4seedL3D12E
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:400    .rodata._ZN5daisy4seedL3D29E:00000000 $d
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:404    .rodata._ZN5daisy4seedL3D29E:00000000 _ZN5daisy4seedL3D29E
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:408    .rodata._ZN5daisy4seedL3D30E:00000000 $d
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:412    .rodata._ZN5daisy4seedL3D30E:00000000 _ZN5daisy4seedL3D30E
-C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:416    .rodata._ZTVN10bkshepherd15GuitarPedal125BE:00000000 $d
+                            *ABS*:0000000000000000 guitar_pedal_125b.cpp
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:17     .text._ZN10bkshepherd15GuitarPedal125BD2Ev:0000000000000000 $t
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:24     .text._ZN10bkshepherd15GuitarPedal125BD2Ev:0000000000000000 _ZN10bkshepherd15GuitarPedal125BD2Ev
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:58     .text._ZN10bkshepherd15GuitarPedal125BD2Ev:0000000000000010 $d
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:24     .text._ZN10bkshepherd15GuitarPedal125BD2Ev:0000000000000000 _ZN10bkshepherd15GuitarPedal125BD1Ev
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:65     .text._ZN10bkshepherd15GuitarPedal125BD0Ev:0000000000000000 $t
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:72     .text._ZN10bkshepherd15GuitarPedal125BD0Ev:0000000000000000 _ZN10bkshepherd15GuitarPedal125BD0Ev
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:116    .text._ZN10bkshepherd15GuitarPedal125BD0Ev:000000000000001c $d
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:121    .text._ZN10bkshepherd15GuitarPedal125BC2Ev:0000000000000000 $t
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:128    .text._ZN10bkshepherd15GuitarPedal125BC2Ev:0000000000000000 _ZN10bkshepherd15GuitarPedal125BC2Ev
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:173    .text._ZN10bkshepherd15GuitarPedal125BC2Ev:0000000000000020 $d
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:128    .text._ZN10bkshepherd15GuitarPedal125BC2Ev:0000000000000000 _ZN10bkshepherd15GuitarPedal125BC1Ev
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:181    .text._ZN10bkshepherd15GuitarPedal125B4InitEjb:0000000000000000 $t
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:188    .text._ZN10bkshepherd15GuitarPedal125B4InitEjb:0000000000000000 _ZN10bkshepherd15GuitarPedal125B4InitEjb
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:310    .text._ZN10bkshepherd15GuitarPedal125B4InitEjb:000000000000008c $d
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:420    .rodata._ZTVN10bkshepherd15GuitarPedal125BE:0000000000000000 _ZTVN10bkshepherd15GuitarPedal125BE
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:322    .rodata:0000000000000000 $d
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:356    .rodata._ZL16s_switchMetaData:0000000000000000 $d
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:360    .rodata._ZL16s_switchMetaData:0000000000000000 _ZL16s_switchMetaData
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:368    .rodata._ZN5daisy4seedL2D1E:0000000000000000 $d
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:372    .rodata._ZN5daisy4seedL2D1E:0000000000000000 _ZN5daisy4seedL2D1E
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:376    .rodata._ZN5daisy4seedL2D9E:0000000000000000 $d
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:380    .rodata._ZN5daisy4seedL2D9E:0000000000000000 _ZN5daisy4seedL2D9E
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:384    .rodata._ZN5daisy4seedL3D11E:0000000000000000 $d
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:388    .rodata._ZN5daisy4seedL3D11E:0000000000000000 _ZN5daisy4seedL3D11E
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:392    .rodata._ZN5daisy4seedL3D12E:0000000000000000 $d
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:396    .rodata._ZN5daisy4seedL3D12E:0000000000000000 _ZN5daisy4seedL3D12E
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:400    .rodata._ZN5daisy4seedL3D29E:0000000000000000 $d
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:404    .rodata._ZN5daisy4seedL3D29E:0000000000000000 _ZN5daisy4seedL3D29E
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:408    .rodata._ZN5daisy4seedL3D30E:0000000000000000 $d
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:412    .rodata._ZN5daisy4seedL3D30E:0000000000000000 _ZN5daisy4seedL3D30E
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccHc6lUv.s:416    .rodata._ZTVN10bkshepherd15GuitarPedal125BE:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 _ZN10bkshepherd18BaseHardwareModuleD2Ev
