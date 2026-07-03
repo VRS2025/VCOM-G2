@@ -1,0 +1,581 @@
+ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.arch armv7e-m
+   3              		.fpu fpv5-d16
+   4              		.eabi_attribute 28, 1
+   5              		.eabi_attribute 23, 1
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 2
+  10              		.eabi_attribute 34, 1
+  11              		.eabi_attribute 18, 4
+  12              		.file	"guitar_pedal_125b.cpp"
+  13              		.text
+  14              	.Ltext0:
+  15              		.cfi_sections	.debug_frame
+  16              		.section	.text._ZN10bkshepherd15GuitarPedal125BD2Ev,"ax",%progbits
+  17              		.align	1
+  18              		.p2align 2,,3
+  19              		.global	_ZN10bkshepherd15GuitarPedal125BD2Ev
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	_ZN10bkshepherd15GuitarPedal125BD2Ev:
+  25              	.LVL0:
+  26              	.LFB3704:
+  27              		.file 1 "GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp"
+   1:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** #include "guitar_pedal_125b.h"
+   2:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** 
+   3:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** using namespace bkshepherd;
+   4:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** 
+   5:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** static const int s_switchParamCount = 2;
+   6:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** static const PreferredSwitchMetaData s_switchMetaData[s_switchParamCount] = {
+   7:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     {sfType : SpecialFunctionType::Bypass, switchMapping : 0}, {sfType : SpecialFunctionType::Alter
+   8:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** 
+   9:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** GuitarPedal125B::GuitarPedal125B() : BaseHardwareModule() {
+  10:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     // Setup the Switch Meta Data for this hardware
+  11:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     m_switchMetaDataParamCount = s_switchParamCount;
+  12:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     m_switchMetaData = s_switchMetaData;
+  13:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** }
+  14:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** 
+  15:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** GuitarPedal125B::~GuitarPedal125B() {}
+  28              		.loc 1 15 1 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              	.LBB5:
+  33              		.loc 1 15 35 is_stmt 0 view .LVU1
+  34 0000 034B     		ldr	r3, .L4
+  35              	.LBE5:
+  36              		.loc 1 15 1 view .LVU2
+  37 0002 10B5     		push	{r4, lr}
+  38              		.cfi_def_cfa_offset 8
+  39              		.cfi_offset 4, -8
+  40              		.cfi_offset 14, -4
+  41              		.loc 1 15 1 view .LVU3
+  42 0004 0446     		mov	r4, r0
+  43              	.LBB6:
+ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 2
+
+
+  44              		.loc 1 15 35 view .LVU4
+  45 0006 0360     		str	r3, [r0]
+  46 0008 FFF7FEFF 		bl	_ZN10bkshepherd18BaseHardwareModuleD2Ev
+  47              	.LVL1:
+  48              		.loc 1 15 35 view .LVU5
+  49              	.LBE6:
+  50              		.loc 1 15 38 view .LVU6
+  51 000c 2046     		mov	r0, r4
+  52 000e 10BD     		pop	{r4, pc}
+  53              	.LVL2:
+  54              	.L5:
+  55              		.loc 1 15 38 view .LVU7
+  56              		.align	2
+  57              	.L4:
+  58 0010 08000000 		.word	.LANCHOR0+8
+  59              		.cfi_endproc
+  60              	.LFE3704:
+  62              		.global	_ZN10bkshepherd15GuitarPedal125BD1Ev
+  63              		.thumb_set _ZN10bkshepherd15GuitarPedal125BD1Ev,_ZN10bkshepherd15GuitarPedal125BD2Ev
+  64              		.section	.text._ZN10bkshepherd15GuitarPedal125BD0Ev,"ax",%progbits
+  65              		.align	1
+  66              		.p2align 2,,3
+  67              		.global	_ZN10bkshepherd15GuitarPedal125BD0Ev
+  68              		.syntax unified
+  69              		.thumb
+  70              		.thumb_func
+  72              	_ZN10bkshepherd15GuitarPedal125BD0Ev:
+  73              	.LVL3:
+  74              	.LFB3706:
+  75              		.loc 1 15 1 is_stmt 1 view -0
+  76              		.cfi_startproc
+  77              		@ args = 0, pretend = 0, frame = 0
+  78              		@ frame_needed = 0, uses_anonymous_args = 0
+  79              	.LBB7:
+  80              	.LBB8:
+  81              		.loc 1 15 35 is_stmt 0 view .LVU9
+  82 0000 064B     		ldr	r3, .L8
+  83              	.LBE8:
+  84              	.LBE7:
+  85              		.loc 1 15 1 view .LVU10
+  86 0002 10B5     		push	{r4, lr}
+  87              		.cfi_def_cfa_offset 8
+  88              		.cfi_offset 4, -8
+  89              		.cfi_offset 14, -4
+  90              		.loc 1 15 1 view .LVU11
+  91 0004 0446     		mov	r4, r0
+  92              	.LVL4:
+  93              	.LBB10:
+  94              	.LBI7:
+  95              		.loc 1 15 1 is_stmt 1 view .LVU12
+  96              	.LBB9:
+  97              		.loc 1 15 35 is_stmt 0 view .LVU13
+  98 0006 0360     		str	r3, [r0]
+  99 0008 FFF7FEFF 		bl	_ZN10bkshepherd18BaseHardwareModuleD2Ev
+ 100              	.LVL5:
+ 101              		.loc 1 15 35 view .LVU14
+ 102              	.LBE9:
+ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 3
+
+
+ 103              	.LBE10:
+ 104              		.loc 1 15 38 view .LVU15
+ 105 000c 49F28461 		movw	r1, #38532
+ 106 0010 2046     		mov	r0, r4
+ 107 0012 FFF7FEFF 		bl	_ZdlPvj
+ 108              	.LVL6:
+ 109 0016 2046     		mov	r0, r4
+ 110 0018 10BD     		pop	{r4, pc}
+ 111              	.LVL7:
+ 112              	.L9:
+ 113              		.loc 1 15 38 view .LVU16
+ 114 001a 00BF     		.align	2
+ 115              	.L8:
+ 116 001c 08000000 		.word	.LANCHOR0+8
+ 117              		.cfi_endproc
+ 118              	.LFE3706:
+ 120              		.section	.text._ZN10bkshepherd15GuitarPedal125BC2Ev,"ax",%progbits
+ 121              		.align	1
+ 122              		.p2align 2,,3
+ 123              		.global	_ZN10bkshepherd15GuitarPedal125BC2Ev
+ 124              		.syntax unified
+ 125              		.thumb
+ 126              		.thumb_func
+ 128              	_ZN10bkshepherd15GuitarPedal125BC2Ev:
+ 129              	.LVL8:
+ 130              	.LFB3701:
+   9:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     // Setup the Switch Meta Data for this hardware
+ 131              		.loc 1 9 1 is_stmt 1 view -0
+ 132              		.cfi_startproc
+ 133              		@ args = 0, pretend = 0, frame = 0
+ 134              		@ frame_needed = 0, uses_anonymous_args = 0
+   9:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     // Setup the Switch Meta Data for this hardware
+ 135              		.loc 1 9 1 is_stmt 0 view .LVU18
+ 136 0000 10B5     		push	{r4, lr}
+ 137              		.cfi_def_cfa_offset 8
+ 138              		.cfi_offset 4, -8
+ 139              		.cfi_offset 14, -4
+   9:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     // Setup the Switch Meta Data for this hardware
+ 140              		.loc 1 9 1 view .LVU19
+ 141 0002 0446     		mov	r4, r0
+ 142              	.LBB11:
+   9:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     // Setup the Switch Meta Data for this hardware
+ 143              		.loc 1 9 57 view .LVU20
+ 144 0004 FFF7FEFF 		bl	_ZN10bkshepherd18BaseHardwareModuleC2Ev
+ 145              	.LVL9:
+   9:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     // Setup the Switch Meta Data for this hardware
+ 146              		.loc 1 9 57 view .LVU21
+ 147 0008 0548     		ldr	r0, .L12
+  11:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     m_switchMetaData = s_switchMetaData;
+ 148              		.loc 1 11 32 view .LVU22
+ 149 000a 0221     		movs	r1, #2
+ 150 000c 04F51043 		add	r3, r4, #36864
+  12:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** }
+ 151              		.loc 1 12 22 view .LVU23
+ 152 0010 044A     		ldr	r2, .L12+4
+   9:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     // Setup the Switch Meta Data for this hardware
+ 153              		.loc 1 9 57 view .LVU24
+ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 4
+
+
+ 154 0012 2060     		str	r0, [r4]
+  11:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     m_switchMetaData = s_switchMetaData;
+ 155              		.loc 1 11 5 is_stmt 1 view .LVU25
+ 156              	.LBE11:
+  13:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** 
+ 157              		.loc 1 13 1 is_stmt 0 view .LVU26
+ 158 0014 2046     		mov	r0, r4
+ 159              	.LBB12:
+  11:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     m_switchMetaData = s_switchMetaData;
+ 160              		.loc 1 11 32 view .LVU27
+ 161 0016 C3F87C16 		str	r1, [r3, #1660]
+  12:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** }
+ 162              		.loc 1 12 5 is_stmt 1 view .LVU28
+  12:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** }
+ 163              		.loc 1 12 22 is_stmt 0 view .LVU29
+ 164 001a C3F88026 		str	r2, [r3, #1664]
+ 165              	.LBE12:
+  13:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** 
+ 166              		.loc 1 13 1 view .LVU30
+ 167 001e 10BD     		pop	{r4, pc}
+ 168              	.LVL10:
+ 169              	.L13:
+  13:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** 
+ 170              		.loc 1 13 1 view .LVU31
+ 171              		.align	2
+ 172              	.L12:
+ 173 0020 08000000 		.word	.LANCHOR0+8
+ 174 0024 00000000 		.word	.LANCHOR1
+ 175              		.cfi_endproc
+ 176              	.LFE3701:
+ 178              		.global	_ZN10bkshepherd15GuitarPedal125BC1Ev
+ 179              		.thumb_set _ZN10bkshepherd15GuitarPedal125BC1Ev,_ZN10bkshepherd15GuitarPedal125BC2Ev
+ 180              		.section	.text._ZN10bkshepherd15GuitarPedal125B4InitEjb,"ax",%progbits
+ 181              		.align	1
+ 182              		.p2align 2,,3
+ 183              		.global	_ZN10bkshepherd15GuitarPedal125B4InitEjb
+ 184              		.syntax unified
+ 185              		.thumb
+ 186              		.thumb_func
+ 188              	_ZN10bkshepherd15GuitarPedal125B4InitEjb:
+ 189              	.LVL11:
+ 190              	.LFB3707:
+  16:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** 
+  17:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** void GuitarPedal125B::Init(size_t blockSize, bool boost) {
+ 191              		.loc 1 17 58 is_stmt 1 view -0
+ 192              		.cfi_startproc
+ 193              		@ args = 0, pretend = 0, frame = 32
+ 194              		@ frame_needed = 0, uses_anonymous_args = 0
+  18:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     BaseHardwareModule::Init(blockSize, boost);
+ 195              		.loc 1 18 5 view .LVU33
+  17:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     BaseHardwareModule::Init(blockSize, boost);
+ 196              		.loc 1 17 58 is_stmt 0 view .LVU34
+ 197 0000 70B5     		push	{r4, r5, r6, lr}
+ 198              		.cfi_def_cfa_offset 16
+ 199              		.cfi_offset 4, -16
+ 200              		.cfi_offset 5, -12
+ 201              		.cfi_offset 6, -8
+ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 5
+
+
+ 202              		.cfi_offset 14, -4
+ 203 0002 0446     		mov	r4, r0
+ 204 0004 88B0     		sub	sp, sp, #32
+ 205              		.cfi_def_cfa_offset 48
+ 206              		.loc 1 18 29 view .LVU35
+ 207 0006 FFF7FEFF 		bl	_ZN10bkshepherd18BaseHardwareModule4InitEjb
+ 208              	.LVL12:
+  19:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** 
+  20:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     m_supportsStereo = true;
+ 209              		.loc 1 20 5 is_stmt 1 view .LVU36
+  21:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** 
+  22:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     Pin knobPins[] = {seed::D15, seed::D16, seed::D17, seed::D18, seed::D19, seed::D20};
+ 210              		.loc 1 22 9 is_stmt 0 view .LVU37
+ 211 000a 204D     		ldr	r5, .L16
+  20:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** 
+ 212              		.loc 1 20 22 view .LVU38
+ 213 000c 0126     		movs	r6, #1
+ 214 000e 04F51043 		add	r3, r4, #36864
+ 215              		.loc 1 22 9 view .LVU39
+ 216 0012 95E80700 		ldm	r5, {r0, r1, r2}
+  20:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** 
+ 217              		.loc 1 20 22 view .LVU40
+ 218 0016 83F87466 		strb	r6, [r3, #1652]
+ 219              		.loc 1 22 5 is_stmt 1 view .LVU41
+ 220              		.loc 1 22 9 is_stmt 0 view .LVU42
+ 221 001a 05AB     		add	r3, sp, #20
+ 222 001c 83E80700 		stm	r3, {r0, r1, r2}
+  23:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     InitKnobs(6, knobPins);
+ 223              		.loc 1 23 5 is_stmt 1 view .LVU43
+ 224              		.loc 1 23 14 is_stmt 0 view .LVU44
+ 225 0020 1A46     		mov	r2, r3
+ 226 0022 2046     		mov	r0, r4
+ 227 0024 0621     		movs	r1, #6
+ 228 0026 FFF7FEFF 		bl	_ZN10bkshepherd18BaseHardwareModule9InitKnobsEiPN5daisy3PinE
+ 229              	.LVL13:
+  24:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** 
+  25:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     Pin switchPins[] = {seed::D6, seed::D5};
+ 230              		.loc 1 25 5 is_stmt 1 view .LVU45
+ 231              		.loc 1 25 9 is_stmt 0 view .LVU46
+ 232 002a EB68     		ldr	r3, [r5, #12]
+  26:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     InitSwitches(2, switchPins);
+ 233              		.loc 1 26 17 view .LVU47
+ 234 002c 01AA     		add	r2, sp, #4
+ 235 002e 2046     		mov	r0, r4
+ 236 0030 0221     		movs	r1, #2
+  25:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     InitSwitches(2, switchPins);
+ 237              		.loc 1 25 9 view .LVU48
+ 238 0032 0193     		str	r3, [sp, #4]
+ 239              		.loc 1 26 5 is_stmt 1 view .LVU49
+ 240              		.loc 1 26 17 is_stmt 0 view .LVU50
+ 241 0034 FFF7FEFF 		bl	_ZN10bkshepherd18BaseHardwareModule12InitSwitchesEiPN5daisy3PinE
+ 242              	.LVL14:
+  27:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** 
+  28:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     Pin encoderPins[][3] = {{seed::D3, seed::D2, seed::D4}};
+ 243              		.loc 1 28 5 is_stmt 1 view .LVU51
+ 244              		.loc 1 28 9 is_stmt 0 view .LVU52
+ 245 0038 05F11003 		add	r3, r5, #16
+ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 6
+
+
+  29:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     InitEncoders(1, encoderPins);
+ 246              		.loc 1 29 17 view .LVU53
+ 247 003c 03AA     		add	r2, sp, #12
+  28:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     InitEncoders(1, encoderPins);
+ 248              		.loc 1 28 9 view .LVU54
+ 249 003e 93E80300 		ldm	r3, {r0, r1}
+ 250 0042 0390     		str	r0, [sp, #12]
+ 251              		.loc 1 29 17 view .LVU55
+ 252 0044 2046     		mov	r0, r4
+  28:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     InitEncoders(1, encoderPins);
+ 253              		.loc 1 28 9 view .LVU56
+ 254 0046 ADF81010 		strh	r1, [sp, #16]	@ movhi
+ 255              		.loc 1 29 5 is_stmt 1 view .LVU57
+ 256              		.loc 1 29 17 is_stmt 0 view .LVU58
+ 257 004a 3146     		mov	r1, r6
+ 258 004c FFF7FEFF 		bl	_ZN10bkshepherd18BaseHardwareModule12InitEncodersEiPA3_N5daisy3PinE
+ 259              	.LVL15:
+  30:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** 
+  31:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     Pin ledPins[] = {seed::D22, seed::D23};
+ 260              		.loc 1 31 5 is_stmt 1 view .LVU59
+ 261              		.loc 1 31 9 is_stmt 0 view .LVU60
+ 262 0050 AB69     		ldr	r3, [r5, #24]
+  32:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     InitLeds(2, ledPins);
+ 263              		.loc 1 32 13 view .LVU61
+ 264 0052 02AA     		add	r2, sp, #8
+ 265 0054 2046     		mov	r0, r4
+ 266 0056 0221     		movs	r1, #2
+  31:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     InitLeds(2, ledPins);
+ 267              		.loc 1 31 9 view .LVU62
+ 268 0058 0293     		str	r3, [sp, #8]
+ 269              		.loc 1 32 5 is_stmt 1 view .LVU63
+ 270              		.loc 1 32 13 is_stmt 0 view .LVU64
+ 271 005a FFF7FEFF 		bl	_ZN10bkshepherd18BaseHardwareModule8InitLedsEiPN5daisy3PinE
+ 272              	.LVL16:
+  33:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** 
+  34:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     InitMidi(seed::D30, seed::D29);
+ 273              		.loc 1 34 5 is_stmt 1 view .LVU65
+ 274              		.loc 1 34 13 is_stmt 0 view .LVU66
+ 275 005e 0C4B     		ldr	r3, .L16+4
+ 276 0060 0C4A     		ldr	r2, .L16+8
+ 277 0062 2046     		mov	r0, r4
+ 278 0064 1968     		ldr	r1, [r3]
+ 279 0066 1268     		ldr	r2, [r2]
+ 280 0068 FFF7FEFF 		bl	_ZN10bkshepherd18BaseHardwareModule8InitMidiEN5daisy3PinES2_
+ 281              	.LVL17:
+  35:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     InitDisplay(seed::D9, seed::D11);
+ 282              		.loc 1 35 5 is_stmt 1 view .LVU67
+ 283              		.loc 1 35 16 is_stmt 0 view .LVU68
+ 284 006c 0A4B     		ldr	r3, .L16+12
+ 285 006e 0B4A     		ldr	r2, .L16+16
+ 286 0070 2046     		mov	r0, r4
+ 287 0072 1968     		ldr	r1, [r3]
+ 288 0074 1268     		ldr	r2, [r2]
+ 289 0076 FFF7FEFF 		bl	_ZN10bkshepherd18BaseHardwareModule11InitDisplayEN5daisy3PinES2_
+ 290              	.LVL18:
+  36:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp ****     InitTrueBypass(seed::D1, seed::D12);
+ 291              		.loc 1 36 5 is_stmt 1 view .LVU69
+ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 7
+
+
+ 292              		.loc 1 36 19 is_stmt 0 view .LVU70
+ 293 007a 094B     		ldr	r3, .L16+20
+ 294 007c 094A     		ldr	r2, .L16+24
+ 295 007e 2046     		mov	r0, r4
+ 296 0080 1968     		ldr	r1, [r3]
+ 297 0082 1268     		ldr	r2, [r2]
+ 298 0084 FFF7FEFF 		bl	_ZN10bkshepherd18BaseHardwareModule14InitTrueBypassEN5daisy3PinES2_
+ 299              	.LVL19:
+  37:GuitarPedal/Hardware-Modules/guitar_pedal_125b.cpp **** }...
+ 300              		.loc 1 37 1 view .LVU71
+ 301 0088 08B0     		add	sp, sp, #32
+ 302              		.cfi_def_cfa_offset 16
+ 303              		@ sp needed
+ 304 008a 70BD     		pop	{r4, r5, r6, pc}
+ 305              	.LVL20:
+ 306              	.L17:
+ 307              		.loc 1 37 1 view .LVU72
+ 308              		.align	2
+ 309              	.L16:
+ 310 008c 00000000 		.word	.LANCHOR2
+ 311 0090 00000000 		.word	.LANCHOR4
+ 312 0094 00000000 		.word	.LANCHOR3
+ 313 0098 00000000 		.word	.LANCHOR6
+ 314 009c 00000000 		.word	.LANCHOR5
+ 315 00a0 00000000 		.word	.LANCHOR8
+ 316 00a4 00000000 		.word	.LANCHOR7
+ 317              		.cfi_endproc
+ 318              	.LFE3707:
+ 320              		.global	_ZTVN10bkshepherd15GuitarPedal125BE
+ 321              		.section	.rodata
+ 322              		.align	2
+ 323              		.set	.LANCHOR2,. + 0
+ 324              	.LC0:
+ 325 0000 02       		.byte	2
+ 326 0001 00       		.byte	0
+ 327 0002 00       		.byte	0
+ 328 0003 03       		.byte	3
+ 329 0004 01       		.byte	1
+ 330 0005 01       		.byte	1
+ 331 0006 00       		.byte	0
+ 332 0007 07       		.byte	7
+ 333 0008 00       		.byte	0
+ 334 0009 06       		.byte	6
+ 335 000a 02       		.byte	2
+ 336 000b 01       		.byte	1
+ 337              	.LC1:
+ 338 000c 02       		.byte	2
+ 339 000d 0C       		.byte	12
+ 340 000e 03       		.byte	3
+ 341 000f 02       		.byte	2
+ 342              	.LC2:
+ 343 0010 02       		.byte	2
+ 344 0011 09       		.byte	9
+ 345 0012 02       		.byte	2
+ 346 0013 0A       		.byte	10
+ 347 0014 02       		.byte	2
+ 348 0015 08       		.byte	8
+ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 8
+
+
+ 349 0016 0000     		.space	2
+ 350              	.LC3:
+ 351 0018 00       		.byte	0
+ 352 0019 05       		.byte	5
+ 353 001a 00       		.byte	0
+ 354 001b 04       		.byte	4
+ 355              		.section	.rodata._ZL16s_switchMetaData,"a"
+ 356              		.align	2
+ 357              		.set	.LANCHOR1,. + 0
+ 360              	_ZL16s_switchMetaData:
+ 361 0000 00       		.byte	0
+ 362 0001 000000   		.space	3
+ 363 0004 00000000 		.word	0
+ 364 0008 01       		.byte	1
+ 365 0009 000000   		.space	3
+ 366 000c 01000000 		.word	1
+ 367              		.section	.rodata._ZN5daisy4seedL2D1E,"a"
+ 368              		.align	2
+ 369              		.set	.LANCHOR8,. + 0
+ 372              	_ZN5daisy4seedL2D1E:
+ 373 0000 02       		.byte	2
+ 374 0001 0B       		.byte	11
+ 375              		.section	.rodata._ZN5daisy4seedL2D9E,"a"
+ 376              		.align	2
+ 377              		.set	.LANCHOR6,. + 0
+ 380              	_ZN5daisy4seedL2D9E:
+ 381 0000 01       		.byte	1
+ 382 0001 04       		.byte	4
+ 383              		.section	.rodata._ZN5daisy4seedL3D11E,"a"
+ 384              		.align	2
+ 385              		.set	.LANCHOR5,. + 0
+ 388              	_ZN5daisy4seedL3D11E:
+ 389 0000 01       		.byte	1
+ 390 0001 08       		.byte	8
+ 391              		.section	.rodata._ZN5daisy4seedL3D12E,"a"
+ 392              		.align	2
+ 393              		.set	.LANCHOR7,. + 0
+ 396              	_ZN5daisy4seedL3D12E:
+ 397 0000 01       		.byte	1
+ 398 0001 09       		.byte	9
+ 399              		.section	.rodata._ZN5daisy4seedL3D29E,"a"
+ 400              		.align	2
+ 401              		.set	.LANCHOR3,. + 0
+ 404              	_ZN5daisy4seedL3D29E:
+ 405 0000 01       		.byte	1
+ 406 0001 0E       		.byte	14
+ 407              		.section	.rodata._ZN5daisy4seedL3D30E,"a"
+ 408              		.align	2
+ 409              		.set	.LANCHOR4,. + 0
+ 412              	_ZN5daisy4seedL3D30E:
+ 413 0000 01       		.byte	1
+ 414 0001 0F       		.byte	15
+ 415              		.section	.rodata._ZTVN10bkshepherd15GuitarPedal125BE,"a"
+ 416              		.align	2
+ 417              		.set	.LANCHOR0,. + 0
+ 420              	_ZTVN10bkshepherd15GuitarPedal125BE:
+ 421 0000 00000000 		.word	0
+ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 9
+
+
+ 422 0004 00000000 		.word	0
+ 423 0008 00000000 		.word	_ZN10bkshepherd15GuitarPedal125BD1Ev
+ 424 000c 00000000 		.word	_ZN10bkshepherd15GuitarPedal125BD0Ev
+ 425 0010 00000000 		.word	_ZN10bkshepherd15GuitarPedal125B4InitEjb
+ 426              		.text
+ 427              	.Letext0:
+ 428              		.file 2 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
+ 429              		.file 3 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
+ 430              		.file 4 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
+ 431              		.file 5 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\lib\\gcc\\arm-none-e
+ 432              		.file 6 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
+ 433              		.file 7 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
+ 434              		.file 8 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
+ 435              		.file 9 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
+ 436              		.file 10 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 437              		.file 11 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 438              		.file 12 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 439              		.file 13 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 440              		.file 14 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 441              		.file 15 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 442              		.file 16 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 443              		.file 17 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 444              		.file 18 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 445              		.file 19 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 446              		.file 20 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 447              		.file 21 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 448              		.file 22 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 449              		.file 23 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 450              		.file 24 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 451              		.file 25 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 452              		.file 26 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 453              		.file 27 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 454              		.file 28 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 455              		.file 29 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 456              		.file 30 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 457              		.file 31 "../VCOM-G1/GuitarPedal/libDaisy/src/daisy_core.h"
+ 458              		.file 32 "../VCOM-G1/GuitarPedal/libDaisy/src/dev/max11300.h"
+ 459              		.file 33 "../VCOM-G1/GuitarPedal/libDaisy/src/dev/sr_595.h"
+ 460              		.file 34 "../VCOM-G1/GuitarPedal/libDaisy/src/util/wav_format.h"
+ 461              		.file 35 "../VCOM-G1/GuitarPedal/libDaisy/src/daisy_seed.h"
+ 462              		.file 36 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\lib\\gcc\\arm-none-
+ 463              		.file 37 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 464              		.file 38 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 465              		.file 39 "../VCOM-G1/GuitarPedal/libDaisy/Middlewares/Third_Party/FatFs/src/integer.h"
+ 466              		.file 40 "../VCOM-G1/GuitarPedal/libDaisy/Middlewares/Third_Party/FatFs/src/ff.h"
+ 467              		.file 41 "GuitarPedal/Hardware-Modules/base_hardware_module.h"
+ 468              		.file 42 "GuitarPedal/Hardware-Modules/guitar_pedal_125b.h"
+ 469              		.file 43 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 470              		.file 44 "<built-in>"
+ARM GAS  C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s 			page 10
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 guitar_pedal_125b.cpp
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:17     .text._ZN10bkshepherd15GuitarPedal125BD2Ev:00000000 $t
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:24     .text._ZN10bkshepherd15GuitarPedal125BD2Ev:00000000 _ZN10bkshepherd15GuitarPedal125BD2Ev
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:58     .text._ZN10bkshepherd15GuitarPedal125BD2Ev:00000010 $d
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:24     .text._ZN10bkshepherd15GuitarPedal125BD2Ev:00000000 _ZN10bkshepherd15GuitarPedal125BD1Ev
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:65     .text._ZN10bkshepherd15GuitarPedal125BD0Ev:00000000 $t
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:72     .text._ZN10bkshepherd15GuitarPedal125BD0Ev:00000000 _ZN10bkshepherd15GuitarPedal125BD0Ev
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:116    .text._ZN10bkshepherd15GuitarPedal125BD0Ev:0000001c $d
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:121    .text._ZN10bkshepherd15GuitarPedal125BC2Ev:00000000 $t
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:128    .text._ZN10bkshepherd15GuitarPedal125BC2Ev:00000000 _ZN10bkshepherd15GuitarPedal125BC2Ev
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:173    .text._ZN10bkshepherd15GuitarPedal125BC2Ev:00000020 $d
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:128    .text._ZN10bkshepherd15GuitarPedal125BC2Ev:00000000 _ZN10bkshepherd15GuitarPedal125BC1Ev
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:181    .text._ZN10bkshepherd15GuitarPedal125B4InitEjb:00000000 $t
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:188    .text._ZN10bkshepherd15GuitarPedal125B4InitEjb:00000000 _ZN10bkshepherd15GuitarPedal125B4InitEjb
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:310    .text._ZN10bkshepherd15GuitarPedal125B4InitEjb:0000008c $d
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:420    .rodata._ZTVN10bkshepherd15GuitarPedal125BE:00000000 _ZTVN10bkshepherd15GuitarPedal125BE
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:322    .rodata:00000000 $d
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:356    .rodata._ZL16s_switchMetaData:00000000 $d
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:360    .rodata._ZL16s_switchMetaData:00000000 _ZL16s_switchMetaData
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:368    .rodata._ZN5daisy4seedL2D1E:00000000 $d
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:372    .rodata._ZN5daisy4seedL2D1E:00000000 _ZN5daisy4seedL2D1E
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:376    .rodata._ZN5daisy4seedL2D9E:00000000 $d
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:380    .rodata._ZN5daisy4seedL2D9E:00000000 _ZN5daisy4seedL2D9E
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:384    .rodata._ZN5daisy4seedL3D11E:00000000 $d
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:388    .rodata._ZN5daisy4seedL3D11E:00000000 _ZN5daisy4seedL3D11E
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:392    .rodata._ZN5daisy4seedL3D12E:00000000 $d
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:396    .rodata._ZN5daisy4seedL3D12E:00000000 _ZN5daisy4seedL3D12E
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:400    .rodata._ZN5daisy4seedL3D29E:00000000 $d
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:404    .rodata._ZN5daisy4seedL3D29E:00000000 _ZN5daisy4seedL3D29E
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:408    .rodata._ZN5daisy4seedL3D30E:00000000 $d
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:412    .rodata._ZN5daisy4seedL3D30E:00000000 _ZN5daisy4seedL3D30E
+C:\Users\vinok\AppData\Local\Temp\cc7SrqSD.s:416    .rodata._ZTVN10bkshepherd15GuitarPedal125BE:00000000 $d
+
+UNDEFINED SYMBOLS
+_ZN10bkshepherd18BaseHardwareModuleD2Ev
+_ZdlPvj
+_ZN10bkshepherd18BaseHardwareModuleC2Ev
+_ZN10bkshepherd18BaseHardwareModule4InitEjb
+_ZN10bkshepherd18BaseHardwareModule9InitKnobsEiPN5daisy3PinE
+_ZN10bkshepherd18BaseHardwareModule12InitSwitchesEiPN5daisy3PinE
+_ZN10bkshepherd18BaseHardwareModule12InitEncodersEiPA3_N5daisy3PinE
+_ZN10bkshepherd18BaseHardwareModule8InitLedsEiPN5daisy3PinE
+_ZN10bkshepherd18BaseHardwareModule8InitMidiEN5daisy3PinES2_
+_ZN10bkshepherd18BaseHardwareModule11InitDisplayEN5daisy3PinES2_
+_ZN10bkshepherd18BaseHardwareModule14InitTrueBypassEN5daisy3PinES2_
