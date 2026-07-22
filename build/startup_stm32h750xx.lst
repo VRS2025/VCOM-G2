@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
   28:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** }
   29:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 
   30:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) MemManage_Handler() 
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 2
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 2
 
 
   31:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** {
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
   85:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 
   86:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) WWDG_IRQHandler() 
   87:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** {
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 3
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 3
 
 
   88:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
  142:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) EXTI1_IRQHandler() 
  143:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** {
  144:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 4
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 4
 
 
  145:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
  199:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** {
  200:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
  201:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 5
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 5
 
 
  202:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void DMA1_Stream3_IRQHandler();
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
  256:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
  257:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
  258:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void FDCAN1_IT1_IRQHandler();
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 6
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 6
 
 
  259:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
  313:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
  314:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void TIM2_IRQHandler();
  315:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 7
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 7
 
 
  316:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** }
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
  370:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void SPI1_IRQHandler();
  371:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
  372:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** }
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 8
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 8
 
 
  373:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
  427:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
  428:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** }
  429:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 9
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 9
 
 
  430:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) TIM8_UP_TIM13_IRQHandler() 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
  484:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** }
  485:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 
  486:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) SPI3_IRQHandler() 
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 10
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 10
 
 
  487:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** {
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
  541:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 
  542:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DMA2_Stream2_IRQHandler() 
  543:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** {
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 11
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 11
 
 
  544:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
  598:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DMA2_Stream6_IRQHandler() 
  599:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** {
  600:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 12
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 12
 
 
  601:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
  655:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** {
  656:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
  657:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 13
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 13
 
 
  658:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void OTG_HS_WKUP_IRQHandler();
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
  712:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
  713:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
  714:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void UART8_IRQHandler();
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 14
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 14
 
 
  715:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
  769:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
  770:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void DMA2D_IRQHandler();
  771:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 15
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 15
 
 
  772:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** }
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
  826:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void SPDIF_RX_IRQHandler();
  827:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
  828:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** }
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 16
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 16
 
 
  829:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
  883:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
  884:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** }
  885:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 17
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 17
 
 
  886:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) HRTIM1_TIMB_IRQHandler() 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
  940:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** }
  941:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 
  942:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DFSDM1_FLT2_IRQHandler() 
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 18
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 18
 
 
  943:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** {
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
  997:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 
  998:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) MDIOS_WKUP_IRQHandler() 
  999:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** {
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 19
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 19
 
 
 1000:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
 1054:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** void __attribute__ ((weak)) DMAMUX2_OVR_IRQHandler() 
 1055:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** {
 1056:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 20
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 20
 
 
 1057:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
 1111:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** {
 1112:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
 1113:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 21
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 21
 
 
 1114:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void BDMA_Channel6_IRQHandler();
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
 1168:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//If you hit the breakpoint below, one of the interrupts was unhandled in your code. 
 1169:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//Define the following function in your code to handle it:
 1170:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//	extern "C" void LPUART1_IRQHandler();
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 22
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 22
 
 
 1171:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	asm("bkpt 255");
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
 1225:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** void EXTI3_IRQHandler()               __attribute__ ((weak, alias ("Default_Handler")));
 1226:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** void EXTI4_IRQHandler()               __attribute__ ((weak, alias ("Default_Handler")));
 1227:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** void DMA1_Stream0_IRQHandler()        __attribute__ ((weak, alias ("Default_Handler")));
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 23
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 23
 
 
 1228:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** void DMA1_Stream1_IRQHandler()        __attribute__ ((weak, alias ("Default_Handler")));
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
 1282:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** void USART6_IRQHandler()              __attribute__ ((weak, alias ("Default_Handler")));
 1283:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** void I2C3_EV_IRQHandler()             __attribute__ ((weak, alias ("Default_Handler")));
 1284:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** void I2C3_ER_IRQHandler()             __attribute__ ((weak, alias ("Default_Handler")));
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 24
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 24
 
 
 1285:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** void OTG_HS_EP1_OUT_IRQHandler()      __attribute__ ((weak, alias ("Default_Handler")));
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
 1339:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** void BDMA_Channel1_IRQHandler()       __attribute__ ((weak, alias ("Default_Handler")));
 1340:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** void BDMA_Channel2_IRQHandler()       __attribute__ ((weak, alias ("Default_Handler")));
 1341:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** void BDMA_Channel3_IRQHandler()       __attribute__ ((weak, alias ("Default_Handler")));
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 25
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 25
 
 
 1342:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** void BDMA_Channel4_IRQHandler()       __attribute__ ((weak, alias ("Default_Handler")));
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
 1396:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	&FDCAN2_IT0_IRQHandler,
 1397:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	&FDCAN1_IT1_IRQHandler,
 1398:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	&FDCAN2_IT1_IRQHandler,
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 26
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 26
 
 
 1399:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	&EXTI9_5_IRQHandler,
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
 1453:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	&OTG_HS_IRQHandler,
 1454:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	&DCMI_IRQHandler,
 1455:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	&CRYP_IRQHandler,
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 27
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 27
 
 
 1456:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	&HASH_RNG_IRQHandler,
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
 1510:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	&BDMA_Channel5_IRQHandler,
 1511:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	&BDMA_Channel6_IRQHandler,
 1512:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	&BDMA_Channel7_IRQHandler,
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 28
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 28
 
 
 1513:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	&COMP1_IRQHandler,
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
   34              		@ frame_needed = 0, uses_anonymous_args = 0
   35              		@ link register save eliminated.
   36 0000 6846     		mov	r0, sp
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 29
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 29
 
 
   37              		.cfi_register 13, 0
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
   88              		.thumb_set DMAMUX2_OVR_IRQHandler,Default_Handler
   89              		.weak	ADC3_IRQHandler
   90              		.thumb_set ADC3_IRQHandler,Default_Handler
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 30
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 30
 
 
   91              		.weak	HSEM1_IRQHandler
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
  145              		.weak	SPDIF_RX_IRQHandler
  146              		.thumb_set SPDIF_RX_IRQHandler,Default_Handler
  147              		.weak	I2C4_ER_IRQHandler
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 31
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 31
 
 
  148              		.thumb_set I2C4_ER_IRQHandler,Default_Handler
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
  202              		.thumb_set DMA2_Stream6_IRQHandler,Default_Handler
  203              		.weak	DMA2_Stream5_IRQHandler
  204              		.thumb_set DMA2_Stream5_IRQHandler,Default_Handler
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 32
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 32
 
 
  205              		.weak	FDCAN_CAL_IRQHandler
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
  259              		.weak	SPI1_IRQHandler
  260              		.thumb_set SPI1_IRQHandler,Default_Handler
  261              		.weak	I2C2_ER_IRQHandler
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 33
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 33
 
 
  262              		.thumb_set I2C2_ER_IRQHandler,Default_Handler
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
  316              		.thumb_set EXTI1_IRQHandler,Default_Handler
  317              		.weak	EXTI0_IRQHandler
  318              		.thumb_set EXTI0_IRQHandler,Default_Handler
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 34
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 34
 
 
  319              		.weak	RCC_IRQHandler
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
  369 0000 0A48     		ldr	r0, .L9
  370 0002 0B4A     		ldr	r2, .L9+4
  371 0004 9042     		cmp	r0, r2
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 35
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 35
 
 
 1536:../VCOM-G1/GuitarPedal/libDaisy/core/startup_stm32h750xx.c **** 	//Normally the CPU should will setup the based on the value from the first entry in the vector tab
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
  411 002a FEE7     		b	.L7
  412              	.L10:
  413              		.align	2
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 36
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 36
 
 
  414              	.L9:
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
  471 00a8 00000000 		.word	TIM1_TRG_COM_IRQHandler
  472 00ac 00000000 		.word	TIM1_CC_IRQHandler
  473 00b0 00000000 		.word	TIM2_IRQHandler
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 37
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 37
 
 
  474 00b4 00000000 		.word	TIM3_IRQHandler
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
  528 018c 00000000 		.word	UART8_IRQHandler
  529 0190 00000000 		.word	SPI4_IRQHandler
  530 0194 00000000 		.word	SPI5_IRQHandler
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 38
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 38
 
 
  531 0198 00000000 		.word	SPI6_IRQHandler
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
  585 0270 00000000 		.word	LPTIM4_IRQHandler
  586 0274 00000000 		.word	LPTIM5_IRQHandler
  587 0278 00000000 		.word	LPUART1_IRQHandler
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 39
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 39
 
 
  588 027c 00000000 		.word	0
@@ -2290,176 +2290,176 @@ ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 1
  594 0294 00000000 		.word	WAKEUP_PIN_IRQHandler
  595              		.text
  596              	.Letext0:
- 597              		.file 2 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
- 598              		.file 3 "c:\\users\\vinok\\toolchains\\gcc10\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
+ 597              		.file 2 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/machine/_default_types.h"
+ 598              		.file 3 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/sys/_stdint.h"
  599              		.file 4 "<built-in>"
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 40
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 40
 
 
 DEFINED SYMBOLS
-                            *ABS*:00000000 startup_stm32h750xx.c
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:19     .text.Default_Handler:00000000 $t
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 Default_Handler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 WAKEUP_PIN_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 SAI4_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 ECC_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 CRS_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 LPUART1_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 LPTIM5_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 LPTIM4_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 LPTIM3_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 LPTIM2_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 COMP1_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 BDMA_Channel7_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 BDMA_Channel6_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 BDMA_Channel5_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 BDMA_Channel4_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 BDMA_Channel3_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 BDMA_Channel2_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 BDMA_Channel1_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 BDMA_Channel0_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 DMAMUX2_OVR_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 ADC3_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 HSEM1_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 SDMMC2_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 MDMA_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 JPEG_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 MDIOS_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 MDIOS_WKUP_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 TIM17_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 TIM16_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 TIM15_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 SWPMI1_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 SAI3_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 DFSDM1_FLT3_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 DFSDM1_FLT2_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 DFSDM1_FLT1_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 DFSDM1_FLT0_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 HRTIM1_FLT_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 HRTIM1_TIME_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 HRTIM1_TIMD_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 HRTIM1_TIMC_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 HRTIM1_TIMB_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 HRTIM1_TIMA_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 HRTIM1_Master_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 DMAMUX1_OVR_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 OTG_FS_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 OTG_FS_WKUP_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 OTG_FS_EP1_IN_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 OTG_FS_EP1_OUT_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 SPDIF_RX_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 I2C4_ER_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 I2C4_EV_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 CEC_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 LPTIM1_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 QUADSPI_IRQHandler
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 41
+                            *ABS*:0000000000000000 startup_stm32h750xx.c
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:19     .text.Default_Handler:0000000000000000 $t
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 Default_Handler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 WAKEUP_PIN_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 SAI4_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 ECC_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 CRS_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 LPUART1_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 LPTIM5_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 LPTIM4_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 LPTIM3_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 LPTIM2_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 COMP1_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 BDMA_Channel7_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 BDMA_Channel6_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 BDMA_Channel5_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 BDMA_Channel4_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 BDMA_Channel3_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 BDMA_Channel2_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 BDMA_Channel1_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 BDMA_Channel0_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 DMAMUX2_OVR_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 ADC3_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 HSEM1_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 SDMMC2_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 MDMA_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 JPEG_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 MDIOS_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 MDIOS_WKUP_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 TIM17_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 TIM16_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 TIM15_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 SWPMI1_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 SAI3_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 DFSDM1_FLT3_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 DFSDM1_FLT2_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 DFSDM1_FLT1_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 DFSDM1_FLT0_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 HRTIM1_FLT_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 HRTIM1_TIME_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 HRTIM1_TIMD_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 HRTIM1_TIMC_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 HRTIM1_TIMB_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 HRTIM1_TIMA_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 HRTIM1_Master_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 DMAMUX1_OVR_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 OTG_FS_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 OTG_FS_WKUP_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 OTG_FS_EP1_IN_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 OTG_FS_EP1_OUT_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 SPDIF_RX_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 I2C4_ER_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 I2C4_EV_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 CEC_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 LPTIM1_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 QUADSPI_IRQHandler
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 41
 
 
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 SAI2_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 DMA2D_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 LTDC_ER_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 LTDC_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 SAI1_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 SPI6_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 SPI5_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 SPI4_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 UART8_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 UART7_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 FPU_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 HASH_RNG_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 CRYP_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 DCMI_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 OTG_HS_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 OTG_HS_WKUP_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 OTG_HS_EP1_IN_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 OTG_HS_EP1_OUT_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 I2C3_ER_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 I2C3_EV_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 USART6_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 DMA2_Stream7_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 DMA2_Stream6_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 DMA2_Stream5_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 FDCAN_CAL_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 ETH_WKUP_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 ETH_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 DMA2_Stream4_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 DMA2_Stream3_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 DMA2_Stream2_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 DMA2_Stream1_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 DMA2_Stream0_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 TIM7_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 TIM6_DAC_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 UART5_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 UART4_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 SPI3_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 TIM5_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 SDMMC1_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 FMC_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 DMA1_Stream7_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 TIM8_CC_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 TIM8_TRG_COM_TIM14_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 TIM8_UP_TIM13_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 TIM8_BRK_TIM12_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 RTC_Alarm_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 EXTI15_10_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 USART3_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 USART2_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 USART1_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 SPI2_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 SPI1_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 I2C2_ER_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 I2C2_EV_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 I2C1_ER_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 I2C1_EV_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 TIM4_IRQHandler
-ARM GAS  C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s 			page 42
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 SAI2_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 DMA2D_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 LTDC_ER_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 LTDC_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 SAI1_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 SPI6_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 SPI5_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 SPI4_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 UART8_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 UART7_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 FPU_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 HASH_RNG_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 CRYP_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 DCMI_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 OTG_HS_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 OTG_HS_WKUP_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 OTG_HS_EP1_IN_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 OTG_HS_EP1_OUT_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 I2C3_ER_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 I2C3_EV_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 USART6_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 DMA2_Stream7_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 DMA2_Stream6_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 DMA2_Stream5_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 FDCAN_CAL_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 ETH_WKUP_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 ETH_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 DMA2_Stream4_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 DMA2_Stream3_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 DMA2_Stream2_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 DMA2_Stream1_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 DMA2_Stream0_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 TIM7_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 TIM6_DAC_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 UART5_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 UART4_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 SPI3_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 TIM5_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 SDMMC1_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 FMC_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 DMA1_Stream7_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 TIM8_CC_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 TIM8_TRG_COM_TIM14_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 TIM8_UP_TIM13_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 TIM8_BRK_TIM12_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 RTC_Alarm_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 EXTI15_10_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 USART3_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 USART2_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 USART1_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 SPI2_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 SPI1_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 I2C2_ER_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 I2C2_EV_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 I2C1_ER_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 I2C1_EV_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 TIM4_IRQHandler
+ARM GAS  /var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s 			page 42
 
 
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 TIM3_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 TIM2_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 TIM1_CC_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 TIM1_TRG_COM_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 TIM1_UP_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 TIM1_BRK_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 EXTI9_5_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 FDCAN2_IT1_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 FDCAN1_IT1_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 FDCAN2_IT0_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 FDCAN1_IT0_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 ADC_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 DMA1_Stream6_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 DMA1_Stream5_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 DMA1_Stream4_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 DMA1_Stream3_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 DMA1_Stream2_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 DMA1_Stream1_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 DMA1_Stream0_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 EXTI4_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 EXTI3_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 EXTI2_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 EXTI1_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 EXTI0_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 RCC_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 FLASH_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 RTC_WKUP_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 TAMP_STAMP_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 PVD_AVD_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 WWDG_IRQHandler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 SysTick_Handler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 PendSV_Handler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 DebugMon_Handler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 SVC_Handler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 UsageFault_Handler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 BusFault_Handler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 MemManage_Handler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 HardFault_Handler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:26     .text.Default_Handler:00000000 NMI_Handler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:350    .text.Reset_Handler:00000000 $t
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:357    .text.Reset_Handler:00000000 Reset_Handler
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:415    .text.Reset_Handler:0000002c $d
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:428    .isr_vector:00000000 g_pfnVectors
-C:\Users\vinok\AppData\Local\Temp\ccoFxP2N.s:425    .isr_vector:00000000 $d
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 TIM3_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 TIM2_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 TIM1_CC_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 TIM1_TRG_COM_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 TIM1_UP_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 TIM1_BRK_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 EXTI9_5_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 FDCAN2_IT1_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 FDCAN1_IT1_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 FDCAN2_IT0_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 FDCAN1_IT0_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 ADC_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 DMA1_Stream6_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 DMA1_Stream5_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 DMA1_Stream4_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 DMA1_Stream3_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 DMA1_Stream2_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 DMA1_Stream1_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 DMA1_Stream0_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 EXTI4_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 EXTI3_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 EXTI2_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 EXTI1_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 EXTI0_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 RCC_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 FLASH_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 RTC_WKUP_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 TAMP_STAMP_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 PVD_AVD_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 WWDG_IRQHandler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 SysTick_Handler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 PendSV_Handler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 DebugMon_Handler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 SVC_Handler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 UsageFault_Handler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 BusFault_Handler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 MemManage_Handler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 HardFault_Handler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:26     .text.Default_Handler:0000000000000000 NMI_Handler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:350    .text.Reset_Handler:0000000000000000 $t
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:357    .text.Reset_Handler:0000000000000000 Reset_Handler
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:415    .text.Reset_Handler:000000000000002c $d
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:428    .isr_vector:0000000000000000 g_pfnVectors
+/var/folders/cn/msls48b51jq2dpk8d4mt2d4w0000gn/T//ccA7rX6R.s:425    .isr_vector:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 memcpy
