@@ -26,7 +26,7 @@ GuitarPedal125B hardware;
 AmpModule amp;
 
 // Ревизия прошивки — показывается мелким шрифтом под логотипом на заставке.
-static const char *FW_REVISION = "rev 2.0";
+static const char *FW_REVISION = "rev 2.1";
 
 // Эффекты после усилителя.
 // delay-буфер вынесен в SDRAM (как лупер) -> DTCM свободен под стек, время до ~1 с.
@@ -1278,6 +1278,17 @@ static void detectPitch()
     g_tunerFreq = decimSR / period;
 }
 
+// Бесшумное переключение байпаса: аппаратный mute -> переключить реле -> unmute.
+// Вызывается из главного цикла (UI), не из аудио-ISR. Глушит клик реле/CPC1018N.
+static void setBypassMuted(bool bypass)
+{
+    hardware.SetAudioMute(true);   // заглушить (CPC1018N)
+    hardware.DelayMs(4);
+    hardware.SetAudioBypass(bypass); // переключить true-bypass реле
+    hardware.DelayMs(8);           // дать реле устаканиться
+    hardware.SetAudioMute(false);  // снять mute
+}
+
 int main(void)
 {
     hardware.Init(48, false); // blockSize=48, boost=false (API GuitarPedal125B)
@@ -1328,11 +1339,13 @@ int main(void)
 
     applySong(g_currentSong);
 
+    hardware.SetAudioMute(true);      // замьютить на время старта аудио (убрать хлопок)
     hardware.StartAdc();
     hardware.StartAudio(AudioCallback);
     g_effectOn = false;               // старт в BYPASS: без щелчков/шумов, юзер включит сам
     hardware.SetAudioBypass(true);    // реле — прямой сигнал гитары
-    hardware.SetAudioMute(false);
+    hardware.DelayMs(80);             // дать кодеку/реле устаканиться
+    hardware.SetAudioMute(false);     // снять mute
 
     uint32_t startMs = System::GetNow();
     bool rPrev = false, lPrev = false, comboLatch = false;
@@ -1363,7 +1376,7 @@ int main(void)
         bool lNow = hardware.switches[SW_LEFT].Pressed();
         if (g_mode == MODE_PLAY)
         {
-            if (rNow && lNow && !comboLatch) { comboLatch = true; g_effectOn = !g_effectOn; hardware.SetAudioBypass(!g_effectOn); }
+            if (rNow && lNow && !comboLatch) { comboLatch = true; g_effectOn = !g_effectOn; setBypassMuted(!g_effectOn); }
             if (rPrev && !rNow && !comboLatch && !lNow) gotoTone(+1); // правый: следующий тон
             if (lPrev && !lNow && !comboLatch && !rNow) gotoTone(-1); // левый: предыдущий тон
             if (!rNow && !lNow) comboLatch = false;
@@ -1445,7 +1458,7 @@ int main(void)
             if (d != 0) { menuSel += d; while (menuSel < 0) menuSel += MENU_COUNT; while (menuSel >= MENU_COUNT) menuSel -= MENU_COUNT; }
             if (p > 0)
             {
-                if (menuSel == 0) { g_mode = MODE_TUNER; g_tunerFreq = 0.0f; hardware.SetAudioBypass(false); } // вход в Daisy
+                if (menuSel == 0) { g_mode = MODE_TUNER; g_tunerFreq = 0.0f; setBypassMuted(false); } // вход в Daisy
                 else if (menuSel == 1) { g_mode = MODE_EDIT; editPage = 0; g_knobRearm = true; }
                 else if (menuSel == 2) { g_mode = MODE_LOOPER; loopField = 0; recomputeTempo(); g_metCounter = 0; g_beatShow = g_beatsPerBar - 1; g_looperEngaged = true; g_knobRearm = true; }
                 else if (menuSel == 3) { g_mode = MODE_TEMPO; tempoSel = 0; tempoEdit = false; }
@@ -1461,7 +1474,7 @@ int main(void)
         else if (g_mode == MODE_TUNER)
         {
             detectPitch();
-            if (p > 0) { g_mode = MODE_MENU; hardware.SetAudioBypass(!g_effectOn); } // вернуть реле
+            if (p > 0) { g_mode = MODE_MENU; setBypassMuted(!g_effectOn); } // вернуть реле
             drawTuner();
         }
         else if (g_mode == MODE_LOOPER)
